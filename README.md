@@ -1,1 +1,1 @@
-# Rock_paper_scissors
+my first attempt at coding rock paper scissors using javascript.
