@@ -31,10 +31,6 @@ function checkWinner(playerSelection, computerSelection){
     }
 }
 
-// console.log(checkWinner("paper", getComputerChoice())); 
-
-
-
 function game() {
     for (let i = 0; i < 5; i++) {
         const playerSelection = prompt("pick rock, paper, or scissors!");
