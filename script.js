@@ -31,11 +31,11 @@ function checkWinner(playerSelection, computerSelection){
     }
 }
 
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-//         const playerSelection = prompt("pick rock, paper, or scissors!");
-//         const computerSelection = getComputerChoice();
-//         console.log(checkWinner(playerSelection, computerSelection));
-//     }
-// }
-//     game();
+function game() {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("pick rock, paper, or scissors!");
+        const computerSelection = getComputerChoice();
+        console.log(checkWinner(playerSelection, computerSelection));
+    }
+}
+    game();
