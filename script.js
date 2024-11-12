@@ -1,41 +1,34 @@
+let playerScore = 0;
+let computerScore = 0;
+
 const getComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() *3);
-        switch (randomNumber){
-            case 0:
-            return "rock";
+    const choices = ["rock", "paper", "scissors"];
+    const randomNumber = Math.floor(Math.random() * 3);
+    return choices[randomNumber];
+};
 
-            case 1:
-            return "paper";
-            
-            case 2:
-            return "scissors";
-        } 
-}
-
-
-// this code above will return rock, paper or scissors at random.
-
-function checkWinner(playerSelection, computerSelection){
-    if (playerSelection == computerSelection){
-        return "tie";
-    }
-    else if(
-        (playerSelection == "rock" && computerSelection == "scissors") ||
-        (playerSelection == "paper" && computerSelection == "rock") ||
-        (playerSelection == "scissors" && computerSelection == "paper") 
-    ){
-        return `congratulations, ${playerSelection} beats ${computerSelection}`;
-    }
-    else {
-        return `you lose! ${computerSelection} beats ${playerSelection}`
+function checkWinner(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "It's a tie!";
+    } else if (
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
+    ) {
+        playerScore++;
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    } else {
+        computerScore++;
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("pick rock, paper, or scissors!");
-        const computerSelection = getComputerChoice();
-        console.log(checkWinner(playerSelection, computerSelection));
-    }
+function playRound(playerSelection) {
+    const computerSelection = getComputerChoice();
+    const resultMessage = checkWinner(playerSelection, computerSelection);
+
+    // Update the result message on the page
+    document.getElementById('result').textContent = resultMessage;
+    // Update the score on the page
+    document.getElementById('score').textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
 }
-    game();
