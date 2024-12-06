@@ -1,1 +1,1 @@
-my first attempt at coding rock paper scissors using javascript.currebtly a work in progress
+my first attempt at coding rock paper scissors using javascript. very basic programme but is now fully functional.
