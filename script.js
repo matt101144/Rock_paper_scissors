@@ -27,8 +27,19 @@ function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
     const resultMessage = checkWinner(playerSelection, computerSelection);
 
-    // Update the result message on the page
+    
     document.getElementById('result').textContent = resultMessage;
-    // Update the score on the page
+    
+
+    if (playerScore === 5 || computerScore === 5) {
+        const winner = playerScore === 5 ? 'Player' : 'Computer';
+        document.getElementById('result').textContent = `${winner} wins the game!`;
+        
+        
+        playerScore = 0;
+        computerScore = 0;
+    }
+
+    
     document.getElementById('score').textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
 }
